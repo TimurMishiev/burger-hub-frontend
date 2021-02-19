@@ -1,5 +1,6 @@
 import React from 'react';
 import Login from "./components/Login.js";
+import Logout from "./components/Logout.js";
 import { connect } from 'react-redux';
 import { getCurrentUser } from "./actions/currentUser.js";
 
@@ -12,9 +13,15 @@ class App extends React.Component {
   render () {
     return (
     
-      <Login/>
+      this.props.currentUser ? <Logout/> : <Login/>
     );
   }
 }
 
-export default connect (null, { getCurrentUser })(App);
+const mapStateToProps = ({ currentUser}) => {
+  return {
+    currentUser  //currentUser from redux
+  }
+}
+
+export default connect (mapStateToProps, { getCurrentUser })(App);
