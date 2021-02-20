@@ -1,48 +1,49 @@
 import React from 'react';
-import Restaurants from './Restaurants.js';
-import RestaurantAction from '../actions/RestaurantAction.js'
+
 
 
 class Landing extends React.Component {
-  constructor(){
-    super()
+  
 
-    this.state = {
-      restaurants: []
-    }
-  }
+state = {
+  ourRestaurants: []
+}
 
-  componentDidMount() {
-  RestaurantAction.fetchRestaurants().then(restaurants => this.setState({ restaurants }))
-  }
-
-  render(){
-    return (
-    <React.Fragment>
-      <div className='restaurant_select'>
-        <div className='restaurant_select_top'>
-
-          <div className='restaurant_select_top-header'>CHOOSE A RESTAURANT</div>
-
-        <div className='arrow_piker'>
-          <div className='arrow_piker-up'></div>
-          <div className='arrow_piker-down'></div>
-          </div>
-        </div>
-    
-
-        <div className='restaurant_select_bottom'>
-          <ul>
-           <Restaurants restaurants={this.state.restaurants}/>
-          </ul>
-
-        </div>
+render() {
+  return (
+    <div className='restaurant_select'>
+      <div className='restaurant_select_top'>
+        <div className='restaurant_select_top-header font-effect-outline'>Choose a restaurant</div>
+        
+          <div className='arrow_picker'>
+            <div className='arrow_picker-up'></div>
+            <div className='arrow_picker-down'></div>
+          </div> 
       </div>
 
-      <button> Go to the restaurant</button>
-    </React.Fragment>
-    );
+      <div className='restaurant_select_bottom'>
+        <ul>
+          {this.state.ourRestaurants.map(restaurant => {
+            return <li key={restaurant.id}>{restaurant.title}</li>;
+            })}
+        </ul>
+      </div>
+      <button>Got to the restaurant</button>
+      </div>
+    
+  );
+}
+
+  componentDidMount() {
+    fetch('http://localhost:3000/api/v1/restaurants')
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          ourRestaurants: data
+        })
+      })
   }
 }
+
 
 export default Landing;
