@@ -1,5 +1,5 @@
 import React from 'react';
-import { url } from 'stylus';
+// import { url } from 'stylus';
 
 
 
@@ -23,6 +23,12 @@ getTitle = (restaurant) => {
   this.setState({ title, url, display: false });
 };
 
+goToRestaurant = () => {
+  console.log('go to restaurant!');
+  const { url } =this.state;
+  console.log(url);
+}
+
 
 render() {
   return (
@@ -30,7 +36,9 @@ render() {
       <div className='restaurant_select_top'>
         
         <div onClick={this.displayList}
-        className='restaurant_select_top-header font-effect-outline'>Choose a restaurant</div>
+        className='restaurant_select_top-header font-effect-outline'>
+          {this.state.title ? this.state.title : 'Choose a restaurant'}
+          </div>
         
           <div className='arrow_picker'>
             <div className='arrow_picker-up'></div>
@@ -45,7 +53,7 @@ render() {
             })}
         </ul>
       </div>) : null}
-      <button>Got to the restaurant</button>
+      {this.state.title && !this.state.dispay ? (<button onClick={this.goToRestaurant}> Go to the restaurant</button>) : null}
       </div>
     
   );

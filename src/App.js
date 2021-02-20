@@ -3,6 +3,9 @@ import Login from "./components/Login.js";
 import Logout from "./components/Logout.js";
 import { connect } from 'react-redux';
 import { getCurrentUser } from "./actions/currentUser.js";
+import Header from "./components/Header.js"
+import Order from "./components/Order.js"
+import AdminMenu from "./components/AdminMenu.js"
 
 class App extends React.Component {
 
@@ -12,8 +15,14 @@ class App extends React.Component {
 
   render () {
     return (
-    
-      this.props.currentUser ? <Logout/> : <Login/>
+      <div className='burger-paradase'>
+        <div className='menu'>
+         <Header title="BrooklynBurger"/>
+        </div>
+        <Order />
+        <AdminMenu />
+        {this.props.currentUser ? <Logout/> : <Login/>}
+      </div>
     );
   }
 }
