@@ -26,7 +26,7 @@ getTitle = (restaurant) => {
 
 goToRestaurant = () => {
  
-  const { url } =this.state;
+  const { url } = this.state;
  
   this.props.history.push(`/restaurant/:${url}`)
 }
@@ -57,7 +57,7 @@ render() {
       </div>) : null}
       {this.state.title && !this.state.dispay ? (<button onClick={this.goToRestaurant}> Go to the restaurant</button>) : null}
       </div>
-      <div><loginUser/></div>
+    
     
   );
 }
