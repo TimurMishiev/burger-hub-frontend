@@ -1,4 +1,5 @@
 import React from 'react';
+import { url } from 'stylus';
 
 
 
@@ -6,14 +7,30 @@ class Landing extends React.Component {
   
 
 state = {
-  ourRestaurants: []
-}
+  ourRestaurants: [],
+  display: false,
+  title: '',
+  url: ''
+};
+
+displayList = () => {
+  const { display } = this.state;
+  this.setState({ display: !display });
+};
+
+getTitle = (restaurant) => {
+  const {title, url} = restaurant;
+  this.setState({ title, url, display: false });
+};
+
 
 render() {
   return (
     <div className='restaurant_select'>
       <div className='restaurant_select_top'>
-        <div className='restaurant_select_top-header font-effect-outline'>Choose a restaurant</div>
+        
+        <div onClick={this.displayList}
+        className='restaurant_select_top-header font-effect-outline'>Choose a restaurant</div>
         
           <div className='arrow_picker'>
             <div className='arrow_picker-up'></div>
@@ -21,13 +38,13 @@ render() {
           </div> 
       </div>
 
-      <div className='restaurant_select_bottom'>
+      {this.state.display ? (<div className='restaurant_select_bottom'>
         <ul>
           {this.state.ourRestaurants.map(restaurant => {
-            return <li key={restaurant.id}>{restaurant.title}</li>;
+            return <li onClick={() => this.getTitle(restaurant)} key={restaurant.id}>{restaurant.title}</li>;
             })}
         </ul>
-      </div>
+      </div>) : null}
       <button>Got to the restaurant</button>
       </div>
     

@@ -541,6 +541,11 @@ input[type=submit].github {
   max-width: 400px;
   margin: 200px auto 0;
 }
+.log_in_form {
+  display: block;
+  text-align: center;
+
+}
 .login-header {
   display: -webkit-box;
   display: flex;
