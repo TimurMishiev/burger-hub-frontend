@@ -1,5 +1,6 @@
 import React from 'react';
 // import { url } from 'stylus';
+import loginUser from '../loginUser.js'
 
 
 
@@ -56,6 +57,7 @@ render() {
       </div>) : null}
       {this.state.title && !this.state.dispay ? (<button onClick={this.goToRestaurant}> Go to the restaurant</button>) : null}
       </div>
+      <div><loginUser/></div>
     
   );
 }

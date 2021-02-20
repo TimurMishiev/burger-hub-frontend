@@ -2,7 +2,7 @@ import React from 'react';
 import Header from "./Header.js"
 import Order from "./Order.js"
 import AdminMenu from "./AdminMenu.js"
-import loginUser from '../loginUser.js';
+// import loginUser from '../loginUser.js';
 
 class App extends React.Component {
 
@@ -13,11 +13,11 @@ class App extends React.Component {
       <div className='burger-paradase'>
         <div className='menu'>
          <Header title="BrooklynBurger"/>
-         <loginUser />
+         {/* <loginUser /> */}
         </div>
         <Order />
         <AdminMenu />
-        <loginUser />
+        {/* <loginUser /> */}
       </div>
     );
   }
