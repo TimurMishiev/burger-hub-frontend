@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NotFun = () => {
+const NotFound = () => {
   return(
     <div>
       <h2>Life is not fun without BURGERs</h2>
@@ -8,4 +8,4 @@ const NotFun = () => {
   )
 }
 
-export default NotFun;
+export default NotFound;

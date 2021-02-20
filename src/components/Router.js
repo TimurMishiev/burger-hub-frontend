@@ -1,19 +1,20 @@
+
 import React from 'react';
+import Landing from './Landing';
+import App from './App';
+import NotFound from './NotFound';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Landing from './Landing.js';
-import App from '../App.js';
-import NotFun from './NotFun.js'
 
 const Router = () => {
-  return(
+  return (
     <BrowserRouter>
       <Switch>
-        <Route exact path = '/' cpmponent={Landing} />
+        <Route exact path='/' component={Landing} />
         <Route path='/restaurant/:restaurantId' component={App} />
-        <Route component ={NotFun} />
+        <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
-  )
-}
+  );
+};
 
 export default Router;
