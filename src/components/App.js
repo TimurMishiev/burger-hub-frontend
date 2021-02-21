@@ -3,6 +3,7 @@ import Order from './Order'
 import Header from './Header';
 import AdminMenu from './AdminMenu'
 import Burgers from './Burgers'
+import AddBurger from './AddBurger'
 import burgerAction from '../actions/burgerAction'
 
 
@@ -23,7 +24,7 @@ componentDidMount(){
  .then(burgers => this.setState({ burgers }))
 }
 
-addMovie = movie => {
+addMovie = burger => {
   burgerAction.createBurger(burger).then(burger => this.setState({
     burgers: this.state.burgers.concat(burger)
   }))
