@@ -24,9 +24,9 @@ componentDidMount(){
 }
 
 addMovie = movie => {
-  burgerAction.createBurger(burger).then.setState({
+  burgerAction.createBurger(burger).then(burger => this.setState({
     burgers: this.state.burgers.concat(burger)
-  })
+  }))
 }
 
 
