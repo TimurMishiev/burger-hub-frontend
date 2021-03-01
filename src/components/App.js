@@ -1,5 +1,5 @@
 import React from 'react';
-import Burgers from './Burgers';
+import Burger from './Burger';
 import Header from './Header';
 import Order from './Order';
 import MenuAdmin from './MenuAdmin';
@@ -16,11 +16,24 @@ class App extends React.Component {
   };
 
   addBurger  = burger => {
+    // here should be a post request 
    console.log('addBurger', burger);
    const burgers = {...this.state.burgers};
    burgers[`burger${Date.now()}`] = burger;
    this.setState({ burgers })
   }
+
+
+  addToOrder = (key) => {
+    // make a  copy of a state object 
+    const order = {...this.state.order}
+    // add a key to an order with 1 , or reshresh current state of an order
+    order[key] = order[key] + 1 || 1;
+    // add new order object to state of an order 
+    this.setState({ order: order })
+
+  };
+
 
   // loadBurgers = () => {
   //   this.setState({ burgers: Burgers})
@@ -38,9 +51,23 @@ class App extends React.Component {
         <div className='burger-paradise'>
           <div className='menu'>
             <Header title='Hot Burgers' />
-            <Burgers burgers={this.state.burgers}/>
+            <ul className='burgers'>
+              {this.state.burgers.map(burger => {
+                return <Burger 
+                key={burger.id}
+                index={burger.id}
+                name={burger.name}
+                price={burger.price}
+                description={burger.description}
+                status={burger.status}
+                image={burger.image}
+                addToOrder={this.addToOrder}
+                 />;
+              })}
+            </ul>
+           
           </div>
-          <Order/>
+          <Order burgers={this.state.burgers} order={this.state.order}/>
           <MenuAdmin addBurger={this.addBurger}
           loadBurgers={this.loadBurgers} />
           
