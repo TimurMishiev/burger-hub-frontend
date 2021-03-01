@@ -17,7 +17,6 @@ class App extends React.Component {
   };
 
   // addBurger  = burger => {
-  //   // here should be a post request 
   //  console.log('addBurger', burger);
   //  const burgers = {...this.state.burgers};
   //  burgers[`burger${Date.now()}`] = burger;
@@ -25,12 +24,10 @@ class App extends React.Component {
   // }
 
   addBurger = burger => {
-
-    //put console log here to see whether you post the burger
-    CreateBurger.postBurger(burger).then(burger = this.setState({
+    // CreateBurger.postBurger(burger).then(burger => console.log("Created Burger", burger))
+    CreateBurger.postBurger(burger).then(burger => this.setState({
       burgers: this.state.burgers.concat(burger)
     }))
-
   }
 
   addToOrder = (key) => {
@@ -78,9 +75,7 @@ class App extends React.Component {
           </div>
           <Order burgers={this.state.burgers} order={this.state.order}/>
           <MenuAdmin addBurger={this.addBurger}
-          loadBurgers={this.loadBurgers} />
-          
-       
+          loadBurgers={this.loadBurgers} /> 
         </div>
     
     );

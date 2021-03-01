@@ -9,7 +9,7 @@ const CreateBurger = {
           'Content-Type': 'application/json',
        }
     };
-    return fetch('', request) // http here 
+    return fetch('http://localhost:3000/api/v1/restaurants/1/burgers', request) 
     .then(response => response.json())
   }
 }
