@@ -4,6 +4,7 @@ import Header from './Header';
 import Order from './Order';
 import MenuAdmin from './MenuAdmin';
 import GetBurgers from '../actions/getBurgers';
+import CreateBurger from '../actions/createBurger';
 
 
 
@@ -15,14 +16,22 @@ class App extends React.Component {
     order: {}
   };
 
-  addBurger  = burger => {
-    // here should be a post request 
-   console.log('addBurger', burger);
-   const burgers = {...this.state.burgers};
-   burgers[`burger${Date.now()}`] = burger;
-   this.setState({ burgers })
-  }
+  // addBurger  = burger => {
+  //   // here should be a post request 
+  //  console.log('addBurger', burger);
+  //  const burgers = {...this.state.burgers};
+  //  burgers[`burger${Date.now()}`] = burger;
+  //  this.setState({ burgers })
+  // }
 
+  addBurger = burger => {
+
+    //put console log here to see whether you post the burger
+    CreateBurger.postBurger(burger).then(burger = this.setState({
+      burgers: this.state.burgers.concat(burger)
+    }))
+
+  }
 
   addToOrder = (key) => {
     // make a  copy of a state object 
@@ -54,14 +63,14 @@ class App extends React.Component {
             <ul className='burgers'>
               {this.state.burgers.map(burger => {
                 return <Burger 
-                key={burger.id}
-                index={burger.id}
-                name={burger.name}
-                price={burger.price}
-                description={burger.description}
-                status={burger.status}
-                image={burger.image}
-                addToOrder={this.addToOrder}
+                  key={burger.id}
+                  index={burger.id}
+                  name={burger.name}
+                  price={burger.price}
+                  description={burger.description}
+                  status={burger.status}
+                  image={burger.image}
+                  addToOrder={this.addToOrder}
                  />;
               })}
             </ul>
