@@ -10,14 +10,14 @@ class Order extends React.Component {
     const isAvailable = burger && burger.status === 'available';
       if (!isAvailable) {
         return (
-        <li className='unavalable'>
+        <li className='unavalable' key={key}>
           Sorry, {burger ? burger.name : 'burger'} temporary sold out
         </li>
         );
       }
 
     return( 
-    <li>
+    <li key={key}>
       <span>
         <span>{count}</span>
         item: {burger.name}
@@ -41,19 +41,20 @@ class Order extends React.Component {
 
       return prevTotal 
     }, 0);
+
     return (
      <div className='order-wrap'>
-     <h2>Your Order</h2>
-     <ul className='order'>
-       {orderIds.map(this.renderOrder)} 
-     </ul>
-     <div className='total'>
-       <div className='total_wrap'>
-         <div className='total_wrap-final'>
-           Total: {total}
-         </div>
-       </div>
-     </div>
+        <h2>Your Order</h2>
+        <ul className='order'>
+          {orderIds.map(this.renderOrder)} 
+        </ul>
+        <div className='total'>
+          <div className='total_wrap'>
+            <div className='total_wrap-final'>
+              Total: $ {total}
+            </div>
+          </div>
+        </div>
      </div>
     );
   }
