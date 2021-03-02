@@ -16,12 +16,6 @@ class App extends React.Component {
     order: {}
   };
 
-  // addBurger  = burger => {
-  //  console.log('addBurger', burger);
-  //  const burgers = {...this.state.burgers};
-  //  burgers[`burger${Date.now()}`] = burger;
-  //  this.setState({ burgers })
-  // }
 
   addBurger = burger => {
     // CreateBurger.postBurger(burger).then(burger => console.log("Created Burger", burger))
@@ -29,6 +23,15 @@ class App extends React.Component {
       burgers: this.state.burgers.concat(burger)
     }))
   }
+
+  // deleteBurger = (key) => {
+  //   const burgers = { ...this.state.burgers };
+
+  //   delete burgers[key]
+  
+  // };
+
+
 
   addToOrder = (key) => {
     // make a  copy of a state object 
@@ -39,20 +42,26 @@ class App extends React.Component {
     this.setState({ order: order })
 
   };
+  
 
-  updateBurger = (key, updatedBurger) => {
-    const burgers = {...this.state.burgers }; 
-    burgers[key] = updatedBurger;
+  deleteFromOrder = key => {
+    const order = { ...this.state.order };
+    delete order[key]
+    this.setState({ order: order })
+    // this.setState( { order });
+  };
 
-    this.setState({ burgers })
+  // updateBurger = (key, updatedBurger) => {
+  //   const burgers = {...this.state.burgers }; 
+  //   burgers[key] = updatedBurger;
 
-  }
-
-
-  // loadBurgers = () => {
-  //   this.setState({ burgers: Burgers})
+  //   this.setState({ burgers });
   // }
 
+ 
+
+
+ 
   componentDidMount() {
      GetBurgers.fetchBurgers()
      .then(burgers => this.setState({ burgers }))
@@ -81,12 +90,16 @@ class App extends React.Component {
             </ul>
            
           </div>
-          <Order burgers={this.state.burgers} order={this.state.order}/>
+          <Order 
+            deleteFromOrder={this.deleteFromOrder}
+            burgers={this.state.burgers} 
+            order={this.state.order}
+          />
           <MenuAdmin 
             addBurger={this.addBurger}
-            // loadBurgers={this.loadBurgers} 
+            
             burgers={this.state.burgers}
-            updateBurger={this.updateBurger}
+            // updateBurger={this.updateBurger}
           
           /> 
         </div>

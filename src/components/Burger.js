@@ -21,7 +21,7 @@ class Burger extends React.Component {
         disabled={!isAvalable}
         onClick={() => this.props.addToOrder(this.props.index)}
         >
-          { isAvalable ? '+Add' : 'Temporary not available'}
+          {isAvalable ? '+Add' : 'Temporary not available'}
           </button>
       </div>
    

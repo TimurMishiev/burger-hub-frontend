@@ -8,7 +8,7 @@ handleChange = event => {
     [event.currentTarget.name]: event.currentTarget.value
    
   };
-  this.props.updateBurger(this.props.index,updatedBurger);
+  this.props.updateBurger(this.props.index, updatedBurger)
 };
 
   render () {

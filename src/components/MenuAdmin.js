@@ -1,6 +1,6 @@
 import React from 'react';
 import AddBurgerForm from '../components/AddBurgerForm';
-import EditBurgerForm from './EditBurgerForm';
+// import EditBurgerForm from './EditBurgerForm';
 
 
 class MenuAdmin extends React.Component {
@@ -8,7 +8,7 @@ class MenuAdmin extends React.Component {
     return ( 
     <div className='menu-admin'>
       <h2>Menu Control</h2>
-       {this.props.burgers.map(burger => {
+       {/* {this.props.burgers.map(burger => {
          return (
          <EditBurgerForm 
               key={burger.id}
@@ -19,10 +19,10 @@ class MenuAdmin extends React.Component {
               status={burger.status}
               image={burger.image}
             // burger={this.props.burgers[burger]}
-            // updateBurger={this.props.updateBurger}
+            updateBurger={this.props.updateBurger}
           />
           );
-       })}
+       })} */}
       
       <AddBurgerForm addBurger={this.props.addBurger}/>
       {/* <button onClick={this.props.loadBurgers}>Load Burgers</button> */}
