@@ -1,13 +1,22 @@
 import React from 'react';
 import AddBurgerForm from '../components/AddBurgerForm';
 // import EditBurgerForm from './EditBurgerForm';
+import Logout from './Logout'
 
 
 class MenuAdmin extends React.Component {
   render() {
     return ( 
+      
     <div className='menu-admin'>
+      <div className='login-header'>
+        <div className='avatar'>
+          <img src='/image/avatar.png' alt='avatar'/>
+        </div>
+        <Logout/>
+      </div>
       <h2>Menu Control</h2>
+     
        {/* {this.props.burgers.map(burger => {
          return (
          <EditBurgerForm 

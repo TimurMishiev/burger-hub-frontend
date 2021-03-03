@@ -1,8 +1,10 @@
 import React from 'react';
-import Login from "./components/Login.js";
-import Logout from "./components/Logout.js";
+import Login from "./Login.js";
+import Logout from "./Logout.js";
 import { connect } from 'react-redux';
-import { getCurrentUser } from "./actions/currentUser.js";
+import { getCurrentUser } from "../actions/currentUser.js";
+
+
 
 
 class loginUser extends React.Component {
@@ -12,9 +14,11 @@ class loginUser extends React.Component {
   }
 
   render () {
+
+    
     return (
-     
-        this.props.currentUser ? <Logout/> : <Login/>
+    
+      this.props.currentUser ? (<Logout/> && this.props.children) : <Login/> 
      
     );
   }

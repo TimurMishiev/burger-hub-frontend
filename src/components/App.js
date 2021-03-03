@@ -5,6 +5,8 @@ import Order from './Order';
 import MenuAdmin from './MenuAdmin';
 import GetBurgers from '../actions/getBurgers';
 import CreateBurger from '../actions/createBurger';
+import LoginUser from './LoginUser'
+import Logout from './Logout'
 
 
 
@@ -70,10 +72,14 @@ class App extends React.Component {
 
   render() {
     return (
-    
+      <LoginUser>
         <div className='burger-paradise'>
+          
           <div className='menu'>
+          
             <Header title='Hot Burgers' />
+          
+            
             <ul className='burgers'>
               {this.state.burgers.map(burger => {
                 return <Burger 
@@ -88,22 +94,26 @@ class App extends React.Component {
                  />;
               })}
             </ul>
-           
+            
           </div>
           <Order 
             deleteFromOrder={this.deleteFromOrder}
             burgers={this.state.burgers} 
             order={this.state.order}
           />
-          <MenuAdmin 
-            addBurger={this.addBurger}
+           
+            <MenuAdmin 
             
-            burgers={this.state.burgers}
-            // updateBurger={this.updateBurger}
-          
-          /> 
+              addBurger={this.addBurger}
+              
+              burgers={this.state.burgers}
+              // updateBurger={this.updateBurger}
+            
+            /> 
+       
+         
         </div>
-    
+        </LoginUser>
     );
   }
 }
