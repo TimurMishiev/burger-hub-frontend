@@ -537,11 +537,11 @@ input[type=submit].success:after {
   background: #2dc22d;
 }
 button.login,
-input[type=submit].github {
+input[type=submit].login {
   border: 0;
   display: block;
   margin-bottom: 2rem;
-  border-radius: 12px;
+  border-radius: 8px;
   width: 100%;
   color: #fff;
   padding: 2rem;
