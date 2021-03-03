@@ -11,7 +11,7 @@ class MenuAdmin extends React.Component {
     <div className='menu-admin'>
       <div className='login-header'>
         <div className='avatar'>
-          <img src='/image/avatar.png' alt='avatar'/>
+          <img src='/images/panda.jpg' alt='avatar'/>
         </div>
         <Logout/>
       </div>

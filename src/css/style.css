@@ -147,12 +147,16 @@ textarea {
   font-family: inherit;
   font-size: 100%;
   margin: 0;
+  border-radius: 4px;
 }
 button,
 input {
   line-height: normal;
+  border-radius: 4px;
+  
 }
 button,
+
 html input[type=button],
 input[type=reset],
 input[type=submit] {
@@ -167,6 +171,7 @@ input[type=checkbox],
 input[type=radio] {
   box-sizing: border-box;
   padding: 0;
+  border-radius: 8px;
 }
 input[type=search] {
   -webkit-appearance: textfield;
@@ -193,6 +198,7 @@ button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
+  border-radius: 4px;
 }
 .clearfix:after {
   visibility: hidden;
@@ -305,7 +311,7 @@ header.top .header-content .sub-header {
   border-radius: 4px;
 }
 .burger-paradise > *:last-child {
-  background: #ededed;
+  background: #f8f6f6;
   padding: 2rem;
 }
 ul {
@@ -404,6 +410,7 @@ ul.order li span.count span {
 .burger-edit select:focus {
   outline: 0;
   background: #fef2de;
+  border-radius: 4px;
 }
 .burger-edit textarea {
   width: 100%;
@@ -416,6 +423,7 @@ ul.order li span.count span {
   width: 100%;
   border: 0;
   font-size: 1.2rem;
+  border-radius: 4px;
 }
 .burger-edit .status {
   width: 100%;
@@ -472,6 +480,7 @@ input[type=submit] {
   transition: all 0.2s;
   position: relative;
   z-index: 2;
+  border-radius: 8px;
 }
 button[disabled],
 input[type=submit][disabled] {
@@ -483,8 +492,9 @@ input[type=submit][disabled] {
 }
 button[disabled]:hover,
 input[type=submit][disabled]:hover {
-  color: #d12028;
+  color: #d4150f;
   cursor: not-allowed;
+  
 }
 button[disabled]:after,
 input[type=submit][disabled]:after {
@@ -503,6 +513,7 @@ input[type=submit]:after {
   top: 0;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+  border-radius: 8px;
 }
 button:hover,
 input[type=submit]:hover,
@@ -525,11 +536,12 @@ button.success:after,
 input[type=submit].success:after {
   background: #2dc22d;
 }
-button.github,
+button.login,
 input[type=submit].github {
   border: 0;
   display: block;
   margin-bottom: 2rem;
+  border-radius: 12px;
   width: 100%;
   color: #fff;
   padding: 2rem;

@@ -72,7 +72,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <LoginUser>
+    
         <div className='burger-paradise'>
           
           <div className='menu'>
@@ -101,7 +101,7 @@ class App extends React.Component {
             burgers={this.state.burgers} 
             order={this.state.order}
           />
-           
+          <LoginUser>
             <MenuAdmin 
             
               addBurger={this.addBurger}
@@ -111,9 +111,9 @@ class App extends React.Component {
             
             /> 
        
-         
+       </LoginUser>
         </div>
-        </LoginUser>
+        
     );
   }
 }
