@@ -53,12 +53,15 @@ class App extends React.Component {
     // this.setState( { order });
   };
 
-  // updateBurger = (key, updatedBurger) => {
-  //   const burgers = {...this.state.burgers }; 
-  //   burgers[key] = updatedBurger;
-
-  //   this.setState({ burgers });
-  // }
+  updateBurger = (id, updatedBurger) => {
+    const burgers = this.state.burgers.map(burger => { 
+      return burger.id == updatedBurger.id ? updatedBurger : burger
+      
+    })
+    // console.log(updatedBurger)
+    this.setState({ burgers })
+  }
+  
 
  
 
@@ -107,7 +110,7 @@ class App extends React.Component {
               addBurger={this.addBurger}
               
               burgers={this.state.burgers}
-              // updateBurger={this.updateBurger}
+              updateBurger={this.updateBurger}
             
             /> 
        

@@ -35,8 +35,12 @@ handleChange = event => {
           <option value ='available'>Available</option>
           <option value ='unavailable'>Sold out</option>
         </select>
-        <textarea name = 'description' value={this.props.description} />
-        <input name = 'image' type='text' value={this.props.image} />
+        <textarea 
+        onChange={this.handleChange}
+        name = 'description' value={this.props.description} />
+        <input 
+         onChange={this.handleChange}
+         name = 'image' type='text' value={this.props.image} />
       </div>
     )
   }

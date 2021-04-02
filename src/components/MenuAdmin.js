@@ -1,6 +1,6 @@
 import React from 'react';
 import AddBurgerForm from '../components/AddBurgerForm';
-// import EditBurgerForm from './EditBurgerForm';
+import EditBurgerForm from './EditBurgerForm';
 import Logout from './Logout'
 
 
@@ -17,7 +17,7 @@ class MenuAdmin extends React.Component {
       </div>
       <h2>Menu Control</h2>
      
-       {/* {this.props.burgers.map(burger => {
+       {this.props.burgers.map(burger => {
          return (
          <EditBurgerForm 
               key={burger.id}
@@ -27,11 +27,11 @@ class MenuAdmin extends React.Component {
               description={burger.description}
               status={burger.status}
               image={burger.image}
-            // burger={this.props.burgers[burger]}
+              burger={burger}
             updateBurger={this.props.updateBurger}
           />
           );
-       })} */}
+       })}
       
       <AddBurgerForm addBurger={this.props.addBurger}/>
       {/* <button onClick={this.props.loadBurgers}>Load Burgers</button> */}

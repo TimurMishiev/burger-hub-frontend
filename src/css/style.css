@@ -480,12 +480,13 @@ input[type=submit] {
   transition: all 0.2s;
   position: relative;
   z-index: 2;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 button[disabled],
 input[type=submit][disabled] {
   color: #d12028;
   background: #fff;
+  border-radius: 4px;
   -webkit-transform: rotate(-10deg) scale(1.5) translateX(40%) translateY(-50%);
           transform: rotate(-10deg) scale(1.5) translateX(40%) translateY(-50%);
   border: 1px solid #d12028;
@@ -494,11 +495,14 @@ button[disabled]:hover,
 input[type=submit][disabled]:hover {
   color: #d4150f;
   cursor: not-allowed;
+  border-radius: 4px;
+  
   
 }
 button[disabled]:after,
 input[type=submit][disabled]:after {
   display: none;
+  border-radius: 4px;
 }
 button:after,
 input[type=submit]:after {
@@ -513,7 +517,7 @@ input[type=submit]:after {
   top: 0;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 button:hover,
 input[type=submit]:hover,

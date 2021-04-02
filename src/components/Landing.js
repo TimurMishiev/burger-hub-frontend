@@ -28,7 +28,7 @@ goToRestaurant = () => {
  
   const { url } = this.state;
  
-  this.props.history.push(`/restaurant/:${url}`)
+  this.props.history.push(`/restaurant/${url}`)
 }
 
 
